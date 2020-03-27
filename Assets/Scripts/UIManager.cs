@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,17 @@ public class UIManager : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed = 1f;
     public bool fadeToBlack, fadeFromBlack;
+
+    public Text healthText;
+    public Image healthImage;
+
+    public Text coinText;
+
+    public GameObject pauseScreen, optionsScreen;
+
+    public Slider musicVolSlider, sfxVolSlider;
+
+    public string levelSelect, mainMenu;
 
     private void Awake()
     {
@@ -37,5 +49,42 @@ public class UIManager : MonoBehaviour
                 fadeFromBlack = false;
             }
         }
+    }
+
+    public void Resume()
+    {
+        GameManager.instance.PauseUnpause();
+    }
+
+    public void OpenOptions()
+    {
+        optionsScreen.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        optionsScreen.SetActive(false);
+    }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene(levelSelect);
+        Time.timeScale = 1f;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(mainMenu);
+        Time.timeScale = 1f;
+    }
+
+    public void SetMusicLevel()
+    {
+        AudioManager.instance.SetMusicLevel();
+    }
+
+    public void SetSFXLevel()
+    {
+        AudioManager.instance.SetSFXLevel();
     }
 }
