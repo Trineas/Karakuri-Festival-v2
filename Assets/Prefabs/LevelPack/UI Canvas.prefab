@@ -89,7 +89,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5240929663716014946}
         m_MethodName: SetMusicLevel
         m_Mode: 1
         m_Arguments:
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5240929663716014946}
         m_MethodName: SetSFXLevel
         m_Mode: 1
         m_Arguments:

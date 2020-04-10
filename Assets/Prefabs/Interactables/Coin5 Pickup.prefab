@@ -62,7 +62,7 @@ MonoBehaviour:
   value: 5
   pickupEffect: {fileID: 7988094781283205383, guid: bb7fefbf9d1f5db418f50d34b027b144,
     type: 3}
-  soundToPlay: 5
+  soundToPlay: 17
 --- !u!95 &5930659537350381392
 Animator:
   serializedVersion: 3

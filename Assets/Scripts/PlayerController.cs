@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private int wallJumpLimit = 1;
     private int wallJumpCounter = 0;
 
+    private int attackLimit = 1;
+    private int attackCounter = 0;
+
     private Vector3 moveDirection;
 
     public CharacterController charController;
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isInteracting;
 
-    public int jumpSoundToplay;
+    public int jumpSoundToPlay, attackSoundToPlay;
 
     private void Awake()
     {
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
                 if (Input.GetButtonDown("Jump"))
                 {
-                    AudioManager.instance.PlaySFX(jumpSoundToplay);
+                    AudioManager.instance.PlaySFX(jumpSoundToPlay);
                     moveDirection.y = jumpForce;
                 }
             }
@@ -121,7 +124,8 @@ public class PlayerController : MonoBehaviour
             characterModels[1].SetActive(false);
             characterModels[2].SetActive(false);
 
-            jumpSoundToplay = 7;
+            jumpSoundToPlay = 7;
+            attackSoundToPlay = 6;
 
             moveSpeed = 5f;
             jumpForce = 15f;
@@ -140,7 +144,8 @@ public class PlayerController : MonoBehaviour
             characterModels[1].SetActive(true);
             characterModels[2].SetActive(false);
 
-            jumpSoundToplay = 4;
+            jumpSoundToPlay = 4;
+            attackSoundToPlay = 3;
 
             moveSpeed = 3.5f;
             jumpForce = 12.5f;
@@ -159,7 +164,8 @@ public class PlayerController : MonoBehaviour
             characterModels[1].SetActive(false);
             characterModels[2].SetActive(true);
 
-            jumpSoundToplay = 13;
+            jumpSoundToPlay = 13;
+            attackSoundToPlay = 12;
 
             moveSpeed = 6.5f;
             jumpForce = 15f;
@@ -204,6 +210,34 @@ public class PlayerController : MonoBehaviour
                 DialogueManager.instance.SetSpeechNext();
             }
         }
+
+        // Attack
+        if (!isInteracting)
+        {
+            if (Input.GetButtonDown("Attack"))
+            {
+                if (attackCounter < attackLimit)
+                {
+                    if (CharacterSwitch.instance.currentCharacter == 1)
+                    {
+                        characterAnimators[0].SetTrigger("Attacking");
+                        StartCoroutine(AttackCo());
+                    }
+
+                    else if (CharacterSwitch.instance.currentCharacter == 2)
+                    {
+                        characterAnimators[1].SetTrigger("Attacking");
+                        StartCoroutine(AttackCo());
+                    }
+
+                    else
+                    {
+                        characterAnimators[2].SetTrigger("Attacking");
+                        StartCoroutine(AttackCo());
+                    }
+                }
+            }
+        }
     }
 
     public void Knockback()
@@ -220,6 +254,32 @@ public class PlayerController : MonoBehaviour
         charController.Move(moveDirection * Time.deltaTime);
     }
 
+    IEnumerator AttackCo()
+    {
+        if (charController.isGrounded)
+        {
+            stopMove = true;
+            attackCounter++;
+            AudioManager.instance.PlaySFX(attackSoundToPlay);
+
+            yield return new WaitForSeconds(0.85f);
+
+            attackCounter = 0;
+            stopMove = false;
+        }
+
+        else
+        {
+            attackCounter++;
+            AudioManager.instance.PlaySFX(attackSoundToPlay);
+
+            yield return new WaitForSeconds(0.85f);
+
+            attackCounter = 0;
+        }
+
+    }
+
     // Walljump
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -234,7 +294,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (wallJumpCounter < wallJumpLimit)
                 {
-                    AudioManager.instance.PlaySFX(jumpSoundToplay);
+                    AudioManager.instance.PlaySFX(jumpSoundToPlay);
                     moveDirection.y = jumpForce;
                     wallJumpCounter++;
                 }

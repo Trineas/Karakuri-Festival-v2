@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691f93f9c57ea534a93041d91bd005fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: 8
+  soundToPlay: 20
 --- !u!1 &5780259173668464770
 GameObject:
   m_ObjectHideFlags: 0
