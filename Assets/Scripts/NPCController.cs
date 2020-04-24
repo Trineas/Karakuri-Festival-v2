@@ -23,8 +23,6 @@ public class NPCController : MonoBehaviour
 
     public float faceRange;
 
-    public GameObject speechEffect;
-
     void Start()
     {
         waitAtPoint = Random.Range(2.0f, 6.0f);
@@ -84,8 +82,6 @@ public class NPCController : MonoBehaviour
                 break;
 
             case AIState.isFacing:
-
-                Instantiate(speechEffect, transform.position, transform.rotation);
 
                 anim.SetBool("IsMoving", false);
 

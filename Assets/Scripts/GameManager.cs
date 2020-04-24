@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
 
         PlayerController.instance.stopMove = true;
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
         UIManager.instance.fadeToBlack = true;
 

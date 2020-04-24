@@ -37,7 +37,13 @@ public class PlayerController : MonoBehaviour
 
     public bool isInteracting;
 
-    public int jumpSoundToPlay, attackSoundToPlay;
+    public int jumpSoundToPlay, attackSoundToPlay, rangedAttackSoundToPlay;
+
+    public GameObject speechEffect;
+
+    public GameObject bowl, bomb, bullet;
+    public Transform rangedWeaponSlot;
+    public float throwingSpeed, throwingHeight;
 
     private void Awake()
     {
@@ -129,6 +135,8 @@ public class PlayerController : MonoBehaviour
 
             moveSpeed = 5f;
             jumpForce = 15f;
+            throwingSpeed = 15;
+            throwingHeight = 0f;
             charController.center = new Vector3(0f, 0.56f, 0f);
             charController.radius = 0.29f;
             charController.height = 1f;
@@ -149,6 +157,8 @@ public class PlayerController : MonoBehaviour
 
             moveSpeed = 3.5f;
             jumpForce = 12.5f;
+            throwingSpeed = 5;
+            throwingHeight = 5f;
             charController.center = new Vector3(0f, 0.56f, 0f);
             charController.radius = 0.29f;
             charController.height = 1f;
@@ -169,6 +179,8 @@ public class PlayerController : MonoBehaviour
 
             moveSpeed = 6.5f;
             jumpForce = 15f;
+            throwingSpeed = 25;
+            throwingHeight = 0f;
             charController.center = new Vector3(0f, 0.56f, 0f);
             charController.radius = 0.29f;
             charController.height = 1f;
@@ -192,9 +204,16 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (speechEffect.activeInHierarchy && !DialogueTrigger.instance.canTalkTo)
+        {
+            speechEffect.SetActive(false);
+        }
+
         // Interact
         if (DialogueTrigger.instance.canTalkTo && !isInteracting)
         {
+            speechEffect.SetActive(true);
+
             if (Input.GetButtonDown("Interact"))
             {
                 stopMove = true;
@@ -212,7 +231,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Attack
-        if (!isInteracting)
+        if (!isInteracting && charController.isGrounded)
         {
             if (Input.GetButtonDown("Attack"))
             {
@@ -238,6 +257,34 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        // Ranged Attack
+        if (!isInteracting && charController.isGrounded)
+        {
+            if (Input.GetButtonDown("Ranged Attack"))
+            {
+                if (attackCounter < attackLimit)
+                {
+                    if (CharacterSwitch.instance.currentCharacter == 1)
+                    {
+                        characterAnimators[0].SetTrigger("RangedAttacking");
+                        StartCoroutine(RangedAttackCo());
+                    }
+
+                    else if (CharacterSwitch.instance.currentCharacter == 2)
+                    {
+                        characterAnimators[1].SetTrigger("RangedAttacking");
+                        StartCoroutine(RangedAttackCo());
+                    }
+
+                    else
+                    {
+                        characterAnimators[2].SetTrigger("RangedAttacking");
+                        StartCoroutine(RangedAttackCo());
+                    }
+                }
+            }
+        }
     }
 
     public void Knockback()
@@ -256,28 +303,60 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator AttackCo()
     {
-        if (charController.isGrounded)
+        stopMove = true;
+        attackCounter++;
+        AudioManager.instance.PlaySFX(attackSoundToPlay);
+
+        yield return new WaitForSeconds(0.85f);
+
+        attackCounter = 0;
+        stopMove = false;
+    }
+
+    IEnumerator RangedAttackCo()
+    {
+        stopMove = true;
+        attackCounter++;
+        AudioManager.instance.PlaySFX(rangedAttackSoundToPlay);
+
+        if (CharacterSwitch.instance.currentCharacter == 1)
         {
-            stopMove = true;
-            attackCounter++;
-            AudioManager.instance.PlaySFX(attackSoundToPlay);
+            GameObject rangedWeaponInstance = Instantiate(bowl, rangedWeaponSlot.position, bowl.transform.rotation);
+            rangedWeaponInstance.transform.rotation = Quaternion.LookRotation(-rangedWeaponSlot.forward);
+            Rigidbody rangedWeaponRig = rangedWeaponInstance.GetComponent<Rigidbody>();
 
-            yield return new WaitForSeconds(0.85f);
+            rangedWeaponRig.AddForce(rangedWeaponSlot.forward * throwingSpeed, ForceMode.Impulse);
+            rangedWeaponRig.AddForce(rangedWeaponSlot.up * throwingHeight, ForceMode.Impulse);
+        }
 
-            attackCounter = 0;
-            stopMove = false;
+        else if (CharacterSwitch.instance.currentCharacter == 2)
+        {
+            GameObject rangedWeaponInstance = Instantiate(bomb, rangedWeaponSlot.position, bomb.transform.rotation);
+            rangedWeaponInstance.transform.rotation = Quaternion.LookRotation(-rangedWeaponSlot.forward);
+            Rigidbody rangedWeaponRig = rangedWeaponInstance.GetComponent<Rigidbody>();
+
+            rangedWeaponRig.AddForce(rangedWeaponSlot.forward * moveSpeed, ForceMode.Impulse);
+            rangedWeaponRig.AddForce(rangedWeaponSlot.up * throwingHeight, ForceMode.Impulse);
         }
 
         else
         {
-            attackCounter++;
-            AudioManager.instance.PlaySFX(attackSoundToPlay);
+            GameObject rangedWeaponInstance = Instantiate(bullet, rangedWeaponSlot.position, bullet.transform.rotation);
+            rangedWeaponInstance.transform.rotation = Quaternion.LookRotation(-rangedWeaponSlot.forward);
+            Rigidbody rangedWeaponRig = rangedWeaponInstance.GetComponent<Rigidbody>();
 
-            yield return new WaitForSeconds(0.85f);
-
-            attackCounter = 0;
+            rangedWeaponRig.AddForce(rangedWeaponSlot.forward * moveSpeed, ForceMode.Impulse);
+            rangedWeaponRig.AddForce(rangedWeaponSlot.up * throwingHeight, ForceMode.Impulse);
         }
 
+        yield return new WaitForSeconds(0.85f);
+
+        attackCounter = 0;
+        stopMove = false;
+
+        yield return new WaitForSeconds(0.85f);
+
+        attackCounter = 0;
     }
 
     // Walljump

@@ -25,7 +25,24 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        currentHealth--;
+        if (CharacterSwitch.instance.currentCharacter == 1)
+        {
+            currentHealth--;
+            currentHealth--;
+        }
+
+        else if (CharacterSwitch.instance.currentCharacter == 2)
+        {
+            currentHealth--;
+            currentHealth--;
+            currentHealth--;
+        }
+
+        else
+        {
+            currentHealth--;
+        }
+
 
         if (currentHealth <= 0)
         {
