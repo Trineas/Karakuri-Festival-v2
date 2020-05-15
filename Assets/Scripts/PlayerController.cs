@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] playerPieces;
 
     public bool stopMove;
+    public bool attackingUnlocked = true;
 
     public bool isInteracting;
 
@@ -231,7 +232,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Attack
-        if (!isInteracting && charController.isGrounded)
+        if (!isInteracting && charController.isGrounded && attackingUnlocked)
         {
             if (Input.GetButtonDown("Attack"))
             {
@@ -259,7 +260,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Ranged Attack
-        if (!isInteracting && charController.isGrounded)
+        if (!isInteracting && charController.isGrounded && attackingUnlocked)
         {
             if (Input.GetButtonDown("Ranged Attack"))
             {

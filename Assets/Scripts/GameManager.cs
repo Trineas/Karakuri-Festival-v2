@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
 
     public int LevelEndMusic = 8;
 
-    public string levelToLoad;
-
     public bool isRespawning;
 
     private void Awake()
@@ -102,15 +100,15 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator LevelEndCo()
     {
-        AudioManager.instance.PlayMusic(LevelEndMusic);
+        //AudioManager.instance.PlayMusic(LevelEndMusic);
 
         PlayerController.instance.stopMove = true;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.25f);
 
         UIManager.instance.fadeToBlack = true;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.25f);
 
         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_unlocked", 1);
 
@@ -127,6 +125,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_coins", currentCoins);
         }
 
-        SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene(LevelExit.instance.levelToLoad);
     }
 }

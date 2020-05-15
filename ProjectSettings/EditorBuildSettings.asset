@@ -9,15 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c7ba95395c5c3db468251818c2397db6
   - enabled: 1
-    path: Assets/Scenes/WorldMap.unity
-    guid: ef833fe834e7bc84f8cf99cbee4b9882
-  - enabled: 1
-    path: Assets/Scenes/01_Village.unity
-    guid: 838effba7f84dba48b4baec3e7618706
+    path: Assets/Scenes/01_VillagePrologue.unity
+    guid: 0bad17324270f7e4ab683cf1151c07ad
   - enabled: 1
     path: Assets/Scenes/02_ForestPath.unity
-    guid: 5e5d209411d276340ae6a5446f73c3ee
+    guid: 1be7e8bf12ee05749861cecba64e004d
   - enabled: 1
-    path: Assets/Scenes/03_VillageRaided.unity
-    guid: 8ef648e18d7cf8147a72ecef0d068eac
+    path: Assets/Scenes/03_Lab.unity
+    guid: f84eae2a863bdf149b452cdcf362e5e7
+  - enabled: 1
+    path: Assets/Scenes/04_ForestPathAfter.unity
+    guid: c8758afad2a2de34d86678ba093e7332
+  - enabled: 1
+    path: Assets/Scenes/05_LabAfter.unity
+    guid: 70e49c5168dfedb41a4c9f8dd24c33ca
+  - enabled: 1
+    path: Assets/Scenes/06_VillageRaided.unity
+    guid: 251fa0622f603a445bf1d590d4df3b67
+  - enabled: 1
+    path: Assets/Scenes/07_Castle.unity
+    guid: 28ef54450b7d45d42ab41d45a51b2313
   m_configObjects: {}
