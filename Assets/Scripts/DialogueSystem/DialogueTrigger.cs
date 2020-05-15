@@ -8,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public bool canTalkTo;
 
-    [SerializeField] SpeechScript speechToPlay;
+    [SerializeField] SpeechScript speechToPlay = null;
 
     public int eventSoundToPlay;
 

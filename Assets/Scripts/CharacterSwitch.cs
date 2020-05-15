@@ -7,7 +7,7 @@ public class CharacterSwitch : MonoBehaviour
     public static CharacterSwitch instance;
 
     public int currentCharacter;
-    public bool isCharacter3Unlocked;
+    public bool isCharacter2Unlocked, isCharacter3Unlocked;
 
     public bool char1Enabled, char2Enabled, char3Enabled;
 
@@ -59,19 +59,22 @@ public class CharacterSwitch : MonoBehaviour
     {
         if (char1Enabled && !char2Enabled && !char3Enabled)
         {
-            AudioManager.instance.PlaySFX(soundToPlay2);
+            if (isCharacter2Unlocked)
+            {
+                AudioManager.instance.PlaySFX(soundToPlay2);
 
-            PlayerController.instance.stopMove = true;
+                PlayerController.instance.stopMove = true;
 
-            Instantiate(charSwitchEffect, transform.position, transform.rotation);
+                Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
-            yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.5f);
 
-            char1Enabled = false;
-            char2Enabled = true;
-            char3Enabled = false;
+                char1Enabled = false;
+                char2Enabled = true;
+                char3Enabled = false;
 
-            PlayerController.instance.stopMove = false;
+                PlayerController.instance.stopMove = false;
+            }
         }
 
         else if (!char1Enabled && char2Enabled && !char3Enabled)
@@ -154,7 +157,7 @@ public class CharacterSwitch : MonoBehaviour
                 PlayerController.instance.stopMove = false;
             }
 
-            else
+            else if (isCharacter2Unlocked)
             {
                 AudioManager.instance.PlaySFX(soundToPlay2);
 

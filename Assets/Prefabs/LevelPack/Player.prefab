@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCharacter: 1
+  isCharacter2Unlocked: 0
   isCharacter3Unlocked: 0
   char1Enabled: 0
   char2Enabled: 0

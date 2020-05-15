@@ -2422,7 +2422,7 @@ MonoBehaviour:
   optionsScreen: {fileID: 3938934275193508631}
   musicVolSlider: {fileID: 7925408417769077061}
   sfxVolSlider: {fileID: 7658359439679844591}
-  levelSelect: LevelSelect
+  levelSelect: WorldMap
   mainMenu: MainMenu
 --- !u!1 &5684119486320448162
 GameObject:

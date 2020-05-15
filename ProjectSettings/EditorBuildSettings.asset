@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c7ba95395c5c3db468251818c2397db6
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
+    path: Assets/Scenes/WorldMap.unity
     guid: ef833fe834e7bc84f8cf99cbee4b9882
   - enabled: 1
-    path: Assets/Scenes/01_Level_01.unity
+    path: Assets/Scenes/01_Village.unity
     guid: 838effba7f84dba48b4baec3e7618706
   - enabled: 1
-    path: Assets/Scenes/02_Level_02.unity
+    path: Assets/Scenes/02_ForestPath.unity
     guid: 5e5d209411d276340ae6a5446f73c3ee
   - enabled: 1
-    path: Assets/Scenes/03_Level_03.unity
+    path: Assets/Scenes/03_VillageRaided.unity
     guid: 8ef648e18d7cf8147a72ecef0d068eac
   m_configObjects: {}

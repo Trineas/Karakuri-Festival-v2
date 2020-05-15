@@ -31,10 +31,10 @@ public class DialogueManager : MonoBehaviour
 
     public Sprite[] artworks;
 
-    [SerializeField] CanvasGroup TextBoxCanvasGroup;
-    [SerializeField] Image speakerPortrait;
-    [SerializeField] Text speakerName;
-    [SerializeField] Text mainText;
+    [SerializeField] CanvasGroup TextBoxCanvasGroup = null;
+    [SerializeField] Image speakerPortrait = null;
+    [SerializeField] Text speakerName = null;
+    [SerializeField] Text mainText = null;
 
     private void Awake()
     {
@@ -103,8 +103,6 @@ public class DialogueManager : MonoBehaviour
     IEnumerator EndSpeechCo(float delay = 0.25f)
     {
         speechInProgress = false;
-
-
 
         TextBoxCanvasGroup.blocksRaycasts = TextBoxCanvasGroup.interactable = false;
         float cgrpAlpha = 1f;
