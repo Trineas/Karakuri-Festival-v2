@@ -2171,7 +2171,6 @@ GameObject:
   - component: {fileID: 5871267287593570452}
   - component: {fileID: 1773275033591418984}
   - component: {fileID: 4031319297284386558}
-  - component: {fileID: 8509241772858753150}
   m_Layer: 0
   m_Name: Systems Manager
   m_TagString: Untagged
@@ -2211,7 +2210,6 @@ MonoBehaviour:
     type: 3}
   currentCoins: 0
   LevelEndMusic: 5
-  levelToLoad: LevelSelect
   isRespawning: 0
 --- !u!114 &1773275033591418984
 MonoBehaviour:
@@ -2274,21 +2272,6 @@ MonoBehaviour:
     type: 2}
   sfxMixer: {fileID: -5059692043441703267, guid: fc3620be38da90e4388a06348bf48573,
     type: 2}
---- !u!114 &8509241772858753150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5871267287593570455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2038317ede8b7ae4c81795dbf7262d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canTalkTo: 0
-  speechToPlay: {fileID: 0}
-  eventSoundToPlay: 0
 --- !u!1 &5917565594920996042
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] playerPieces;
 
     public bool stopMove;
+    public bool canTalkTo;
     public bool attackingUnlocked = true;
 
     public bool isInteracting;
@@ -205,13 +206,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (speechEffect.activeInHierarchy && !DialogueTrigger.instance.canTalkTo)
+        if (speechEffect.activeInHierarchy && !canTalkTo)
         {
             speechEffect.SetActive(false);
         }
 
         // Interact
-        if (DialogueTrigger.instance.canTalkTo && !isInteracting)
+        if (canTalkTo && !isInteracting)
         {
             speechEffect.SetActive(true);
 

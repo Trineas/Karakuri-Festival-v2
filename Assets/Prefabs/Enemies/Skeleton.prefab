@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 4, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.41869354}
 --- !u!114 &471931114377039277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 7985695019396220852}
   - component: {fileID: 6565734490568806733}
   - component: {fileID: 3592029086775187096}
+  - component: {fileID: 7007353945231378302}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -137,7 +138,7 @@ MonoBehaviour:
   currentState: 0
   waitAtPoint: 2
   chaseRange: 7.5
-  attackRange: 0.5
+  attackRange: 1
   timeBetweenAttacks: 2
 --- !u!65 &6565734490568806733
 BoxCollider:
@@ -170,6 +171,19 @@ MonoBehaviour:
     type: 3}
   itemToDrop: {fileID: 7374260257502574604, guid: 6e58985957ab549458a3970a7914d91e,
     type: 3}
+--- !u!114 &7007353945231378302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780259173668464770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691f93f9c57ea534a93041d91bd005fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: 20
 --- !u!1001 &6653020459233760602
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,18 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0f365ca7853731438aa11f3d15532a8, type: 3}
-  m_Name: Test
+  m_Name: Cant Exit
   m_EditorClassIdentifier: 
-  speechNum: 1
-  speechName: Test Script
+  speechNum: 6
+  speechName: Cant Exit
   speechGroup:
   - currentSpeaker: 0
-    speechText: Excuse me...
-  - currentSpeaker: 4
-    speechText: Yes, how can I help you?
-  - currentSpeaker: 1
-    speechText: We're looking for some sailors.
-  - currentSpeaker: 4
-    speechText: I don't know any sailors.
-  - currentSpeaker: 2
-    speechText: Oh, okay. Thanks anyway.
+    speechText: I can't leave yet. I have to save the princess!

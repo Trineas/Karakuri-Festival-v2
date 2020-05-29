@@ -6,20 +6,13 @@ public class DialogueTrigger : MonoBehaviour
 {
     public static DialogueTrigger instance;
 
-    public bool canTalkTo;
-
-    [SerializeField] SpeechScript speechToPlay = null;
+    public SpeechScript speechToPlay = null;
 
     public int eventSoundToPlay;
 
     private void Awake()
     {
         instance = this;
-    }
-
-    void Start()
-    {
-        canTalkTo = false;
     }
 
     public void TriggerDialogue()
@@ -31,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            canTalkTo = true;
+            PlayerController.instance.canTalkTo = true;
         }
     }
 
@@ -39,7 +32,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            canTalkTo = false;
+            PlayerController.instance.canTalkTo = false;
         }
     }
 }

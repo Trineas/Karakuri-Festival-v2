@@ -144,6 +144,7 @@ public class DialogueManager : MonoBehaviour
         running = true;
         fillAmount = 0;
 
+
         //if (s.speechSound != null)
         //{
         //    s.speechSound = ;
