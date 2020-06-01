@@ -8,25 +8,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: c7ba95395c5c3db468251818c2397db6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/01_VillagePrologue.unity
     guid: 0bad17324270f7e4ab683cf1151c07ad
-  - enabled: 0
-    path: Assets/Scenes/02_ForestPath.unity
-    guid: 1be7e8bf12ee05749861cecba64e004d
-  - enabled: 0
-    path: Assets/Scenes/03_Lab.unity
-    guid: f84eae2a863bdf149b452cdcf362e5e7
-  - enabled: 0
-    path: Assets/Scenes/04_ForestPathAfter.unity
-    guid: c8758afad2a2de34d86678ba093e7332
-  - enabled: 0
-    path: Assets/Scenes/05_LabAfter.unity
-    guid: 70e49c5168dfedb41a4c9f8dd24c33ca
-  - enabled: 0
-    path: Assets/Scenes/06_VillageRaided.unity
+  - enabled: 1
+    path: Assets/Scenes/01_VillagePrologueFromForest.unity
+    guid: 5db8bc5020b6ebb47813f9d487a00b72
+  - enabled: 1
+    path: Assets/Scenes/01_VillageRaidedFromCastle.unity
     guid: 251fa0622f603a445bf1d590d4df3b67
   - enabled: 1
-    path: Assets/Scenes/07_Castle.unity
+    path: Assets/Scenes/01_VillageRaided.unity
+    guid: 574b145a913237e4aaa939c76653779f
+  - enabled: 1
+    path: Assets/Scenes/02_ForestPath.unity
+    guid: 1be7e8bf12ee05749861cecba64e004d
+  - enabled: 1
+    path: Assets/Scenes/02_ForestPathAfter.unity
+    guid: c8758afad2a2de34d86678ba093e7332
+  - enabled: 1
+    path: Assets/Scenes/03_LabPrologue.unity
+    guid: f84eae2a863bdf149b452cdcf362e5e7
+  - enabled: 1
+    path: Assets/Scenes/03_LabAfter.unity
+    guid: 70e49c5168dfedb41a4c9f8dd24c33ca
+  - enabled: 1
+    path: Assets/Scenes/04_Castle.unity
     guid: ed612561cd984d4429529e66baef5f79
   m_configObjects: {}

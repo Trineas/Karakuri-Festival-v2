@@ -16,25 +16,28 @@ public class LevelExit : MonoBehaviour
         instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public IEnumerator LevelEndCo()
     {
-        
+        //AudioManager.instance.PlayMusic(LevelEndMusic);
+
+        PlayerController.instance.stopMove = true;
+
+        yield return new WaitForSeconds(1.25f);
+
+        UIManager.instance.fadeToBlack = true;
+
+        yield return new WaitForSeconds(1.25f);
+
+        SceneManager.LoadScene(levelToLoad);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             anim.SetTrigger("Hit");
 
-            StartCoroutine(GameManager.instance.LevelEndCo());
+            StartCoroutine(LevelEndCo());
         }
     }
 }

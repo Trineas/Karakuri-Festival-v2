@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public IEnumerator LevelEndCo()
+    /* public IEnumerator LevelEndCo()
     {
         //AudioManager.instance.PlayMusic(LevelEndMusic);
 
@@ -127,4 +127,5 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(LevelExit.instance.levelToLoad);
     }
+    */
 }
