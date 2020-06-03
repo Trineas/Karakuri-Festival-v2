@@ -24,8 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/02_ForestPath.unity
     guid: 1be7e8bf12ee05749861cecba64e004d
   - enabled: 1
-    path: Assets/Scenes/02_ForestPathAfter.unity
+    path: Assets/Scenes/02_ForestPathAfterFromLab.unity
     guid: c8758afad2a2de34d86678ba093e7332
+  - enabled: 1
+    path: Assets/Scenes/02_ForestPathAfterFromVillage.unity
+    guid: e24704d5367867f47bfa5d64c8546d34
   - enabled: 1
     path: Assets/Scenes/03_LabPrologue.unity
     guid: f84eae2a863bdf149b452cdcf362e5e7

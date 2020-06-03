@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 15
+  lowJumpForce: 5
   gravityScale: 5
   rotateSpeed: 5
   bounceForce: 8
@@ -65,6 +66,8 @@ MonoBehaviour:
   playerPieces:
   - {fileID: 0}
   stopMove: 0
+  canTalkTo: 0
+  attackingUnlocked: 1
   isInteracting: 0
   jumpSoundToPlay: 0
   attackSoundToPlay: 0

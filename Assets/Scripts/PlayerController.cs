@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
+    public float lowJumpForce;
     public float gravityScale = 5f;
     public float rotateSpeed;
     public float bounceForce = 8f;
@@ -79,6 +80,11 @@ public class PlayerController : MonoBehaviour
                     AudioManager.instance.PlaySFX(jumpSoundToPlay);
                     moveDirection.y = jumpForce;
                 }
+            }
+
+            if (moveDirection.y > 0 && !Input.GetButton("Jump"))
+            {
+                moveDirection.y += Physics.gravity.y * Time.deltaTime * lowJumpForce;
             }
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;

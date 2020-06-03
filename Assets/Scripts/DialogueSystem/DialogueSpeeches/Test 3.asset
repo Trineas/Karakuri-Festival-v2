@@ -17,3 +17,7 @@ MonoBehaviour:
   speechGroup:
   - currentSpeaker: 3
     speechText: This is where I talk about the plot and send you on your quest.
+  - currentSpeaker: 1
+    speechText: I'll join you. Just let me know when you need me! (Q/E / L/R)
+  - currentSpeaker: 3
+    speechText: You can now attack the bad guys. (Mouse 1 / X) (Shift / Y)
