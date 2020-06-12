@@ -270,11 +270,6 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 4031319297284386558, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
-      propertyPath: sfx.Array.size
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 4031319297284386558, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
-        type: 3}
       propertyPath: levelMusicToPlay
       value: 4
       objectReference: {fileID: 0}

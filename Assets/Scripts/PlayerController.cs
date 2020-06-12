@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public bool stopMove;
     public bool canTalkTo;
+    public bool canInteractWith, canInteractWithUp, canInteractWithDown;
     public bool attackingUnlocked = true;
 
     public bool isInteracting;
@@ -218,6 +219,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Interact
+        // Dialogue
         if (canTalkTo && !isInteracting)
         {
             speechEffect.SetActive(true);
@@ -235,6 +237,44 @@ public class PlayerController : MonoBehaviour
             if (DialogueManager.instance.speechInProgress)
             {
                 DialogueManager.instance.SetSpeechNext();
+            }
+        }
+
+        // Elevator
+        if (canInteractWithUp && !isInteracting)
+        {
+            speechEffect.SetActive(true);
+
+            if (Input.GetButtonDown("Interact"))
+            {
+                stopMove = true;
+                isInteracting = true;
+                ElevatorControllerUp.instance.MoveElevator();
+            }
+        }
+
+        if (canInteractWithDown && !isInteracting)
+        {
+            speechEffect.SetActive(true);
+
+            if (Input.GetButtonDown("Interact"))
+            {
+                stopMove = true;
+                isInteracting = true;
+                ElevatorControllerDown.instance.MoveElevator();
+            }
+        }
+
+        // Char Unlocker
+        if (canInteractWith && !isInteracting)
+        {
+            speechEffect.SetActive(true);
+
+            if (Input.GetButtonDown("Interact"))
+            {
+                stopMove = true;
+                isInteracting = true;
+                CharUnlocker.instance.Unlock();
             }
         }
 

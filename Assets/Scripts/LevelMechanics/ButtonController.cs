@@ -12,6 +12,8 @@ public class ButtonController : MonoBehaviour
 
     public bool isOnOff;
 
+    public int soundToPlay;
+
     void Start()
     {
         buttonUp = button.position;
@@ -26,16 +28,19 @@ public class ButtonController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+
             if (isOnOff)
             {
                 if (isPressed)
                 {
+                    AudioManager.instance.PlaySFX(soundToPlay);
                     button.position = buttonUp;
                     isPressed = false;
                 }
 
                 else
                 {
+                    AudioManager.instance.PlaySFX(soundToPlay);
                     button.position = buttonDown.position;
                     isPressed = true;
                 }
@@ -45,6 +50,7 @@ public class ButtonController : MonoBehaviour
             {
                 if (!isPressed)
                 {
+                    AudioManager.instance.PlaySFX(soundToPlay);
                     button.position = buttonDown.position;
                     isPressed = true;
                 }

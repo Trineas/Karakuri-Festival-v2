@@ -11,7 +11,6 @@ public class DialogueManager : MonoBehaviour
     public struct SpeechGroup
     {
         public Speaker currentSpeaker;
-        //public int speechSound;
         [TextArea(2, 5)]
         public string speechText;
     }
@@ -23,11 +22,11 @@ public class DialogueManager : MonoBehaviour
     public GameObject continueIcon;
 
     SpeechScript currentSpeechFull;
-    int currentSpeechIndex;
+    private int currentSpeechIndex;
     public bool speechInProgress = false;
-    string currentSpeechText = "";
-    float fillAmount = 0f;
-    bool running = false;
+    private string currentSpeechText = "";
+    private float fillAmount = 0f;
+    private bool running = false;
 
     public Sprite[] artworks;
 
@@ -143,11 +142,5 @@ public class DialogueManager : MonoBehaviour
         currentSpeechText = s.speechText;
         running = true;
         fillAmount = 0;
-
-
-        //if (s.speechSound != null)
-        //{
-        //    s.speechSound = ;
-        //}
     }
 }

@@ -67,12 +67,15 @@ MonoBehaviour:
   - {fileID: 0}
   stopMove: 0
   canTalkTo: 0
+  canInteractWith: 0
   attackingUnlocked: 1
   isInteracting: 0
   jumpSoundToPlay: 0
   attackSoundToPlay: 0
   rangedAttackSoundToPlay: 0
   speechEffect: {fileID: 8887006778684463876}
+  interactEffect: {fileID: 161209597858735862, guid: 85001f55b3f35bd43bdf6186f9c9bf96,
+    type: 3}
   bowl: {fileID: 0}
   bomb: {fileID: 0}
   bullet: {fileID: 0}
