@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharUnlocker : MonoBehaviour
 {
     public static CharUnlocker instance;
+    public GameObject elevatorDoor;
 
     private void Awake()
     {
@@ -14,7 +15,8 @@ public class CharUnlocker : MonoBehaviour
     public void Unlock()
     {
         CharacterSwitch.instance.isCharacter3Unlocked = true;
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
+        elevatorDoor.SetActive(true);
 
         PlayerController.instance.isInteracting = false;
         PlayerController.instance.stopMove = false;
