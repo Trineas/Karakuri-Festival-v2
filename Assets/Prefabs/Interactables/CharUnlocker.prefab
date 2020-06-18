@@ -2425,6 +2425,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe7664b0ace9a94390ab97dd5ddc205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elevatorDoor: {fileID: 0}
+  unlockText: {fileID: 0}
+  soundToPlay: 1
 --- !u!1 &7575007534693695137
 GameObject:
   m_ObjectHideFlags: 0

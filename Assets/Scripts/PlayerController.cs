@@ -49,9 +49,14 @@ public class PlayerController : MonoBehaviour
     public Transform rangedWeaponSlot;
     public float throwingSpeed, throwingHeight;
 
+    public ParticleSystem footstepsEffect, impactEffect;
+    public ParticleSystem.EmissionModule footEmission;
+    private bool wasOnGround;
+
     private void Awake()
     {
         instance = this;
+        footEmission = footstepsEffect.emission;
     }
 
     void Start()
@@ -66,8 +71,8 @@ public class PlayerController : MonoBehaviour
         if (!isKnocking && !stopMove && !isInteracting)
         {
             float yStore = moveDirection.y;
-            moveDirection = (transform.forward * Input.GetAxisRaw("Vertical")) + (transform.right * Input.GetAxisRaw("Horizontal"));
-            moveDirection.Normalize();
+            moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
+            //moveDirection.Normalize();
             moveDirection = moveDirection * moveSpeed;
             moveDirection.y = yStore;
 
@@ -92,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
             charController.Move(moveDirection * Time.deltaTime);
 
-            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 transform.rotation = Quaternion.Euler(0f, mainCam.transform.rotation.eulerAngles.y, 0f);
                 Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
@@ -188,7 +193,7 @@ public class PlayerController : MonoBehaviour
 
             moveSpeed = 6.5f;
             jumpForce = 15f;
-            throwingSpeed = 25;
+            throwingSpeed = 50;
             throwingHeight = 0f;
             charController.center = new Vector3(0f, 0.56f, 0f);
             charController.radius = 0.29f;
@@ -213,7 +218,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (speechEffect.activeInHierarchy && !canTalkTo)
+        if (speechEffect.activeInHierarchy && !canTalkTo && !canInteractWith && !canInteractWithDown && !canInteractWithUp)
         {
             speechEffect.SetActive(false);
         }
@@ -333,6 +338,31 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        // Footstep & Impact Effect
+        if (characterAnimators[0].GetFloat("Speed") >= 4f || characterAnimators[1].GetFloat("Speed") >= 4f || characterAnimators[2].GetFloat("Speed") >= 4f && charController.isGrounded)
+        {
+            footEmission.rateOverTime = 35f;
+        }
+        else
+        {
+            footEmission.rateOverTime = 0f;
+        }
+
+        if (!charController.isGrounded)
+        {
+            footEmission.rateOverTime = 0f;
+        }
+
+        if (!wasOnGround && charController.isGrounded)
+        {
+            impactEffect.gameObject.SetActive(true);
+            impactEffect.Stop();
+            impactEffect.transform.position = footstepsEffect.transform.position;
+            impactEffect.Play();
+        }
+
+        wasOnGround = charController.isGrounded;
     }
 
     public void Knockback()

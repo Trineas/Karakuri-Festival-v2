@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 408617100878087159, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 628082660735714676, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
@@ -214,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 3111663925362090689, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3145262067385594032, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 4855941601301058820, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4868304532564046441, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
@@ -391,6 +391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Systems Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6053294969054521166, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6157410903622975110, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -405,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 6728541909934458255, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6818394522889142381, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
         type: 3}

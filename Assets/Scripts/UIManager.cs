@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,7 +18,12 @@ public class UIManager : MonoBehaviour
 
     public Text coinText;
 
+    public Text keyText;
+    public Image keyImage;
+
     public GameObject pauseScreen, optionsScreen;
+
+    public GameObject pauseFirstButton, optionsFirstButton, optionsClosedButton;
 
     public Slider musicVolSlider, sfxVolSlider;
 
@@ -59,11 +65,17 @@ public class UIManager : MonoBehaviour
     public void OpenOptions()
     {
         optionsScreen.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsFirstButton);
     }
 
     public void CloseOptions()
     {
         optionsScreen.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsClosedButton);
     }
 
     public void LevelSelect()

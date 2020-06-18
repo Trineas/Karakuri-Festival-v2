@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,11 +12,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject deathEffect;
 
-    public int currentCoins;
+    public int currentCoins, currentKeys;
 
     public int LevelEndMusic = 8;
 
-    public bool isRespawning;
+    public bool isRespawning, isInDungeon;
 
     private void Awake()
     {
@@ -30,6 +31,15 @@ public class GameManager : MonoBehaviour
         respawnPosition = PlayerController.instance.transform.position;
 
         AddCoins(0);
+        currentKeys = 0;
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "04_Castle")
+        {
+            isInDungeon = true;
+        }
     }
 
     void Update()
@@ -37,6 +47,18 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             PauseUnpause();
+        }
+
+        if (isInDungeon)
+        {
+            UIManager.instance.keyImage.gameObject.SetActive(true);
+            UIManager.instance.keyText.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            UIManager.instance.keyImage.gameObject.SetActive(false);
+            UIManager.instance.keyText.gameObject.SetActive(false);
         }
     }
 
@@ -76,6 +98,18 @@ public class GameManager : MonoBehaviour
         UIManager.instance.coinText.text = "" + currentCoins;
     }
 
+    public void AddKeys()
+    {
+        currentKeys++;
+        UIManager.instance.keyText.text = "x " + currentKeys;
+    }
+
+    public void SubtractKeys()
+    {
+        currentKeys--;
+        UIManager.instance.keyText.text = "x " + currentKeys;
+    }
+
     public void PauseUnpause()
     {
         if (UIManager.instance.pauseScreen.activeInHierarchy)
@@ -83,8 +117,8 @@ public class GameManager : MonoBehaviour
             UIManager.instance.pauseScreen.SetActive(false);
             Time.timeScale = 1f;
 
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
 
         else
@@ -93,8 +127,12 @@ public class GameManager : MonoBehaviour
             UIManager.instance.CloseOptions();
             Time.timeScale = 0f;
 
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(UIManager.instance.pauseFirstButton);
+            
+
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
         }
     }
 
