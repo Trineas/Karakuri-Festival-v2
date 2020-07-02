@@ -74,6 +74,7 @@ public class CharacterSwitch : MonoBehaviour
                 char3Enabled = false;
 
                 PlayerController.instance.stopMove = false;
+                PlayerController.instance.isInteracting = false;
             }
         }
 
@@ -94,6 +95,7 @@ public class CharacterSwitch : MonoBehaviour
                 char3Enabled = true;
 
                 PlayerController.instance.stopMove = false;
+                PlayerController.instance.isInteracting = false;
             }
 
             else
@@ -111,6 +113,7 @@ public class CharacterSwitch : MonoBehaviour
                 char3Enabled = false;
 
                 PlayerController.instance.stopMove = false;
+                PlayerController.instance.isInteracting = false;
 
             }
         }
@@ -132,6 +135,7 @@ public class CharacterSwitch : MonoBehaviour
                 char3Enabled = false;
 
                 PlayerController.instance.stopMove = false;
+                PlayerController.instance.isInteracting = false;
             }
         }
     }
@@ -155,6 +159,7 @@ public class CharacterSwitch : MonoBehaviour
                 char3Enabled = true;
 
                 PlayerController.instance.stopMove = false;
+                PlayerController.instance.isInteracting = false;
             }
 
             else if (isCharacter2Unlocked)
@@ -172,6 +177,7 @@ public class CharacterSwitch : MonoBehaviour
                 char3Enabled = false;
 
                 PlayerController.instance.stopMove = false;
+                PlayerController.instance.isInteracting = false;
             }
         }
 
@@ -190,6 +196,7 @@ public class CharacterSwitch : MonoBehaviour
             char3Enabled = false;
 
             PlayerController.instance.stopMove = false;
+            PlayerController.instance.isInteracting = false;
         }
 
         else if (char3Enabled)
@@ -209,6 +216,7 @@ public class CharacterSwitch : MonoBehaviour
                 char3Enabled = false;
 
                 PlayerController.instance.stopMove = false;
+                PlayerController.instance.isInteracting = false;
             }
         }
     }

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BossActivator : MonoBehaviour
 {
-    public GameObject entrance, boss;
+    public GameObject entrance, exitZone, boss;
 
     public static BossActivator instance;
+
+    public int soundToPlay;
 
     private void Awake()
     {
@@ -17,7 +19,9 @@ public class BossActivator : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            entrance.SetActive(false);
+            entrance.SetActive(true);
+            exitZone.SetActive(false);
+            AudioManager.instance.PlaySFX(soundToPlay);
             boss.SetActive(true);
             gameObject.SetActive(false);
         }

@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdbcbe7267daae4d9febd6e0a97fd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundToPlay: 20
 --- !u!54 &2577940094418836092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -289,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdbcbe7267daae4d9febd6e0a97fd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundToPlay: 20
 --- !u!54 &3079461622629886830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -393,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdbcbe7267daae4d9febd6e0a97fd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundToPlay: 20
 --- !u!54 &4157438710408085399
 Rigidbody:
   m_ObjectHideFlags: 0

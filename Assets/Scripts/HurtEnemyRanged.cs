@@ -5,7 +5,7 @@ using UnityEngine;
 public class HurtEnemyRanged : MonoBehaviour
 {
     public GameObject destroyEffect;
-    public int destroySoundToPlay;
+    public int destroySoundToPlay, hurtSoundToplay;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,6 +32,7 @@ public class HurtEnemyRanged : MonoBehaviour
                 Destroy(this.gameObject);
             }
 
+            AudioManager.instance.PlaySFX(hurtSoundToplay);
             other.GetComponent<EnemyHealthManager>().TakeDamage();
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyControllerMelee : MonoBehaviour
 {
     public Transform[] patrolPoints;
     public int currentPatrolPoint;

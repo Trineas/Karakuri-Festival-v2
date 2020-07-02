@@ -72,7 +72,12 @@ public class PlayerController : MonoBehaviour
         {
             float yStore = moveDirection.y;
             moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
-            //moveDirection.Normalize();
+
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                moveDirection.Normalize();
+            }
+
             moveDirection = moveDirection * moveSpeed;
             moveDirection.y = yStore;
 
@@ -131,6 +136,14 @@ public class PlayerController : MonoBehaviour
         }
 
         if (stopMove)
+        {
+            moveDirection = Vector3.zero;
+            moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
+            charController.Move(moveDirection);
+        }
+
+        //remove if elevator bug not fixed
+        if (isInteracting)
         {
             moveDirection = Vector3.zero;
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
@@ -373,15 +386,16 @@ public class PlayerController : MonoBehaviour
         charController.Move(moveDirection * Time.deltaTime);
     }
 
-    public void Bounce()
+    /*public void Bounce()
     {
         moveDirection.y = bounceForce;
         charController.Move(moveDirection * Time.deltaTime);
-    }
+    }*/
 
     IEnumerator AttackCo()
     {
         stopMove = true;
+        isInteracting = true;
         attackCounter++;
         AudioManager.instance.PlaySFX(attackSoundToPlay);
 
@@ -389,11 +403,13 @@ public class PlayerController : MonoBehaviour
 
         attackCounter = 0;
         stopMove = false;
+        isInteracting = false;
     }
 
     IEnumerator RangedAttackCo()
     {
         stopMove = true;
+        isInteracting = true;
         attackCounter++;
         AudioManager.instance.PlaySFX(rangedAttackSoundToPlay);
 
@@ -431,10 +447,7 @@ public class PlayerController : MonoBehaviour
 
         attackCounter = 0;
         stopMove = false;
-
-        yield return new WaitForSeconds(0.85f);
-
-        attackCounter = 0;
+        isInteracting = false;
     }
 
     // Walljump

@@ -282,6 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockAnim: {fileID: 3925846791077042245}
   doorAnim: {fileID: 3845915634866829949}
+  col: {fileID: 618358296941632503}
   errorSound: 22
   soundToPlay: 21
 --- !u!1001 &5704042006728782620

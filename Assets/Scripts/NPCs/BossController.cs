@@ -8,13 +8,13 @@ public class BossController : MonoBehaviour
 
     public Animator anim;
 
-    public GameObject exitZone;
+    public GameObject exitZone, entrance;
     public float waitToShowExit;
 
     public enum BossPhase {intro, phase1, phase2, phase3, end};
     public BossPhase currentPhase = BossPhase.intro;
 
-    public int bossMusic, bossDeath, bossDeathShout, bossHit;
+    public int bossMusic, bossDeath, bossDeathShout, bossHit, doorOpenSound;
 
     private void Awake()
     {
@@ -41,7 +41,8 @@ public class BossController : MonoBehaviour
             gameObject.SetActive(false);
 
             BossActivator.instance.gameObject.SetActive(true);
-            BossActivator.instance.entrance.SetActive(true);
+            BossActivator.instance.entrance.SetActive(false);
+            exitZone.SetActive(true);
 
             GameManager.instance.isRespawning = false;
         }
@@ -88,6 +89,8 @@ public class BossController : MonoBehaviour
         AudioManager.instance.PlayMusic(AudioManager.instance.levelMusicToPlay);
 
         yield return new WaitForSeconds(waitToShowExit);
+        entrance.SetActive(false);
+        AudioManager.instance.PlaySFX(doorOpenSound);
         exitZone.SetActive(true);
     }
 }

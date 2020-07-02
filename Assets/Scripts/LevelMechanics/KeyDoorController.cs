@@ -6,6 +6,8 @@ public class KeyDoorController : MonoBehaviour
 {
     public Animator lockAnim, doorAnim;
 
+    public BoxCollider col;
+
     private bool isUnlocked;
 
     public int errorSound, soundToPlay;
@@ -27,11 +29,11 @@ public class KeyDoorController : MonoBehaviour
 
     IEnumerator UnlockCo()
     {
-        AudioManager.instance.PlaySFX(soundToPlay);
         lockAnim.SetBool("Unlock", true);
+        col.size = new Vector3(0.01f, 0.01f, 0.01f);
         GameManager.instance.SubtractKeys();
-
         yield return new WaitForSeconds(1f);
+        AudioManager.instance.PlaySFX(soundToPlay);
         isUnlocked = true;
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);

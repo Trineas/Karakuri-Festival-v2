@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 3592029086775187096}
   - component: {fileID: 7007353945231378302}
   m_Layer: 0
-  m_Name: Skeleton
+  m_Name: MeleeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,11 +166,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  invincibleLength: 2
   deathSound: 18
   deathEffect: {fileID: 161209597858735862, guid: bf3a34d8a16fe984fbca3745fc6723b5,
     type: 3}
   itemToDrop: {fileID: 7374260257502574604, guid: 6e58985957ab549458a3970a7914d91e,
     type: 3}
+  enemyPieces:
+  - {fileID: 6653020459233793018}
+  - {fileID: 6653020459233792926}
 --- !u!114 &7007353945231378302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +478,18 @@ Transform:
 --- !u!95 &6653020459243151418 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: b7ea4bbe384f5674a9fed1eb4826f3f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6653020459233760602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6653020459233793018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: b7ea4bbe384f5674a9fed1eb4826f3f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6653020459233760602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6653020459233792926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100036, guid: b7ea4bbe384f5674a9fed1eb4826f3f7,
     type: 3}
   m_PrefabInstance: {fileID: 6653020459233760602}
   m_PrefabAsset: {fileID: 0}

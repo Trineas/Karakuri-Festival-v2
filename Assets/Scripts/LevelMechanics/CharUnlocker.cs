@@ -7,6 +7,9 @@ public class CharUnlocker : MonoBehaviour
     public static CharUnlocker instance;
     public GameObject musicTrigger;
     public GameObject unlockText;
+    public GameObject oldDoor, newDoor;
+
+    public BoxCollider col;
 
     public int soundToPlay;
 
@@ -21,6 +24,9 @@ public class CharUnlocker : MonoBehaviour
         CharacterSwitch.instance.isCharacter3Unlocked = true;
         musicTrigger.SetActive(false);
         unlockText.SetActive(true);
+        oldDoor.SetActive(false);
+        newDoor.SetActive(true);
+        col.size = new Vector3(0.01f, 0.01f, 0.01f);
 
         yield return new WaitForSeconds(4f);
 
@@ -28,8 +34,6 @@ public class CharUnlocker : MonoBehaviour
         PlayerController.instance.isInteracting = false;
         PlayerController.instance.stopMove = false;
         unlockText.SetActive(false);
-
-        yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
     }
 

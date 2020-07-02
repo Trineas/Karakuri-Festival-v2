@@ -57,10 +57,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 80c7b53a242e62c4787823f847264c59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,3 +126,4 @@ MonoBehaviour:
   destroyEffect: {fileID: 161209597858735862, guid: b7a725cce1c95824ca4ed1ae0b7166a7,
     type: 3}
   destroySoundToPlay: 0
+  hurtSoundToplay: 20

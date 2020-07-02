@@ -7,9 +7,13 @@ public class LevelExit : MonoBehaviour
 {
     public static LevelExit instance;
 
-    public Animator anim;
+    //public Animator anim;
 
     public string levelToLoad;
+
+    public bool isBossExit;
+
+    public int levelEndMusic;
 
     private void Awake()
     {
@@ -18,11 +22,22 @@ public class LevelExit : MonoBehaviour
 
     public IEnumerator LevelEndCo()
     {
-        //AudioManager.instance.PlayMusic(LevelEndMusic);
+        if (isBossExit)
+        {
+            AudioManager.instance.PlayMusic(levelEndMusic);
+        }
 
         PlayerController.instance.stopMove = true;
 
-        yield return new WaitForSeconds(1.25f);
+        if (isBossExit)
+        {
+            yield return new WaitForSeconds(3f);
+        }
+
+        else
+        {
+            yield return new WaitForSeconds(1.25f);
+        }
 
         UIManager.instance.fadeToBlack = true;
 
@@ -35,7 +50,7 @@ public class LevelExit : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            anim.SetTrigger("Hit");
+            //anim.SetTrigger("Hit");
 
             StartCoroutine(LevelEndCo());
         }

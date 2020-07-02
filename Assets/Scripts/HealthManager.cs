@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
 
     public float invincibleLength = 2f;
     private float invincCounter;
+    public int soundToPlay;
 
     public Sprite[] healthBarImages;
 
@@ -53,6 +54,7 @@ public class HealthManager : MonoBehaviour
         if (invincCounter <= 0)
         {
             currentHealth--;
+            AudioManager.instance.PlaySFX(soundToPlay);
 
             if (currentHealth <= 0)
             {

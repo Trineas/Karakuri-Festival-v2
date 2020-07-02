@@ -8,8 +8,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public SpeechScript speechToPlay = null;
 
-    public int eventSoundToPlay;
-
     private void Awake()
     {
         instance = this;
