@@ -26,7 +26,7 @@ public class CharUnlocker : MonoBehaviour
         unlockText.SetActive(true);
         oldDoor.SetActive(false);
         newDoor.SetActive(true);
-        col.size = new Vector3(0.01f, 0.01f, 0.01f);
+        col.size = new Vector3(0.001f, 0.001f, 0.001f);
 
         yield return new WaitForSeconds(4f);
 

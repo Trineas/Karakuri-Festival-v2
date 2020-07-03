@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6546041159785483929}
   - component: {fileID: 1705260031141467242}
   - component: {fileID: 5261863376341154561}
-  - component: {fileID: -7249477633562135196}
+  - component: {fileID: 6073970667103499952}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -124,8 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691f93f9c57ea534a93041d91bd005fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: 20
---- !u!114 &-7249477633562135196
+--- !u!114 &6073970667103499952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +133,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2365368525139801817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5889282b6760be478626ddcf44a13ca, type: 3}
+  m_Script: {fileID: 11500000, guid: b4a2e4e4c405fd44bb8de294b7be9daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 4
+  destroyEffect: {fileID: 161209597858735862, guid: 42ebba37dec7b864abe072a8bed11f57,
+    type: 3}

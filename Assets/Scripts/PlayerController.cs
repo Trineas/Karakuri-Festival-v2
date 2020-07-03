@@ -11,11 +11,7 @@ public class PlayerController : MonoBehaviour
     public float lowJumpForce;
     public float gravityScale = 5f;
     public float rotateSpeed;
-    public float bounceForce = 8f;
-
-    public float wallSlideSpeed = 3f;
-    private int wallJumpLimit = 1;
-    private int wallJumpCounter = 0;
+    //public float bounceForce = 8f;
 
     private int attackLimit = 1;
     private int attackCounter = 0;
@@ -31,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public float knockBackLength = 0.5f;
     private float knockBackCounter;
     public Vector2 knockbackPower;
+
+    private int jumpCounter;
+    private int jumpLimit;
 
     public GameObject[] playerPieces;
 
@@ -84,18 +83,26 @@ public class PlayerController : MonoBehaviour
             if (charController.isGrounded)
             {
                 moveDirection.y = 0f;
-                wallJumpCounter = 0;
+                jumpCounter = 0;
 
                 if (Input.GetButtonDown("Jump"))
                 {
                     AudioManager.instance.PlaySFX(jumpSoundToPlay);
                     moveDirection.y = jumpForce;
+                    jumpCounter++;
                 }
             }
 
-            if (moveDirection.y > 0 && !Input.GetButton("Jump"))
+            if (moveDirection.y > 0f && !Input.GetButton("Jump"))
             {
                 moveDirection.y += Physics.gravity.y * Time.deltaTime * lowJumpForce;
+            }
+
+            if (Input.GetButtonDown("Jump") && jumpCounter < jumpLimit && !charController.isGrounded)
+            {
+                AudioManager.instance.PlaySFX(jumpSoundToPlay);
+                moveDirection.y = jumpForce;
+                jumpCounter++;
             }
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
@@ -159,6 +166,7 @@ public class PlayerController : MonoBehaviour
 
             jumpSoundToPlay = 7;
             attackSoundToPlay = 6;
+            jumpLimit = 1;
 
             moveSpeed = 5f;
             jumpForce = 15f;
@@ -181,6 +189,7 @@ public class PlayerController : MonoBehaviour
 
             jumpSoundToPlay = 4;
             attackSoundToPlay = 3;
+            jumpLimit = 1;
 
             moveSpeed = 3.5f;
             jumpForce = 12.5f;
@@ -203,6 +212,7 @@ public class PlayerController : MonoBehaviour
 
             jumpSoundToPlay = 13;
             attackSoundToPlay = 12;
+            jumpLimit = 2;
 
             moveSpeed = 6.5f;
             jumpForce = 15f;
@@ -448,27 +458,5 @@ public class PlayerController : MonoBehaviour
         attackCounter = 0;
         stopMove = false;
         isInteracting = false;
-    }
-
-    // Walljump
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (!charController.isGrounded && hit.normal.y < 0.1f && CharacterSwitch.instance.currentCharacter == 3)
-        {
-            if (moveDirection.y < -wallSlideSpeed)
-            {
-                moveDirection.y = -wallSlideSpeed;
-            }
-
-            if (Input.GetButtonDown("Jump"))
-            {
-                if (wallJumpCounter < wallJumpLimit)
-                {
-                    AudioManager.instance.PlaySFX(jumpSoundToPlay);
-                    moveDirection.y = jumpForce;
-                    wallJumpCounter++;
-                }
-            }
-        }
     }
 }
