@@ -103,6 +103,11 @@ public class PlayerController : MonoBehaviour
                 AudioManager.instance.PlaySFX(jumpSoundToPlay);
                 moveDirection.y = jumpForce;
                 jumpCounter++;
+
+                impactEffect.gameObject.SetActive(true);
+                impactEffect.Stop();
+                impactEffect.transform.position = footstepsEffect.transform.position;
+                impactEffect.Play();
             }
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;

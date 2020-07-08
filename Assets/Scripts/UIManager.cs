@@ -21,9 +21,9 @@ public class UIManager : MonoBehaviour
     public Text keyText;
     public Image keyImage;
 
-    public GameObject pauseScreen, optionsScreen;
+    public GameObject pauseScreen, optionsScreen, controlsScreen;
 
-    public GameObject pauseFirstButton, optionsFirstButton, optionsClosedButton;
+    public GameObject pauseFirstButton, optionsFirstButton, optionsClosedButton, controlsFirstButton, controlsClosedButton;
 
     public Slider musicVolSlider, sfxVolSlider;
 
@@ -78,11 +78,27 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(optionsClosedButton);
     }
 
-    public void LevelSelect()
+    public void OpenControls()
+    {
+        controlsScreen.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlsFirstButton);
+    }
+
+    public void CloseControls()
+    {
+        controlsScreen.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlsClosedButton);
+    }
+
+    /*public void LevelSelect()
     {
         SceneManager.LoadScene(levelSelect);
         Time.timeScale = 1f;
-    }
+    }*/
 
     public void MainMenu()
     {
