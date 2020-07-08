@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     public Text keyText;
     public Image keyImage;
 
-    public GameObject pauseScreen, optionsScreen, controlsScreen;
+    public GameObject pauseScreen, optionsScreen, controlsScreen, mapScreen, mapIcon;
 
     public GameObject pauseFirstButton, optionsFirstButton, optionsClosedButton, controlsFirstButton, controlsClosedButton;
 
@@ -54,6 +54,11 @@ public class UIManager : MonoBehaviour
             {
                 fadeFromBlack = false;
             }
+        }
+
+        if (GameManager.instance.mapUnlocked)
+        {
+            mapIcon.SetActive(true);
         }
     }
 

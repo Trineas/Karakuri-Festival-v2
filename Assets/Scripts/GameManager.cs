@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public int LevelEndMusic = 8;
 
-    public bool isRespawning, isInDungeon;
+    public bool isRespawning, isInDungeon, mapUnlocked;
 
     private void Awake()
     {
@@ -47,6 +47,14 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             PauseUnpause();
+        }
+
+        if (mapUnlocked)
+        {
+            if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Joystick1Button6))
+            {
+                OpenCloseMap();
+            }
         }
 
         if (isInDungeon)
@@ -130,6 +138,27 @@ public class GameManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(UIManager.instance.pauseFirstButton);
             
+
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    public void OpenCloseMap()
+    {
+        if (UIManager.instance.mapScreen.activeInHierarchy)
+        {
+            UIManager.instance.mapScreen.SetActive(false);
+            Time.timeScale = 1f;
+
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        else
+        {
+            UIManager.instance.mapScreen.SetActive(true);
+            Time.timeScale = 0f;
 
             //Cursor.visible = true;
             //Cursor.lockState = CursorLockMode.None;
