@@ -2482,6 +2482,7 @@ MonoBehaviour:
   LevelEndMusic: 5
   isRespawning: 0
   isInDungeon: 0
+  mapUnlocked: 0
 --- !u!114 &1773275033591418984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2496,6 +2497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 5
+  currentLives: 3
   invincibleLength: 2
   soundToPlay: 20
   healthBarImages:

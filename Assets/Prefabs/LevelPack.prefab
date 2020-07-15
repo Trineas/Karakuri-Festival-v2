@@ -2586,11 +2586,6 @@ PrefabInstance:
       propertyPath: isCharacter2Unlocked
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6770849536782812900, guid: 162b60f297264464a9fabca967671b6b,
-        type: 3}
-      propertyPath: isCharacter3Unlocked
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6778378324085796688, guid: 162b60f297264464a9fabca967671b6b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

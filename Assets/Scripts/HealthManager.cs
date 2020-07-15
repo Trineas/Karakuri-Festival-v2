@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour
     public static HealthManager instance;
 
     public int currentHealth, maxHealth;
+    public int currentLives;
 
     public float invincibleLength = 2f;
     private float invincCounter;
@@ -46,6 +47,11 @@ public class HealthManager : MonoBehaviour
                     PlayerController.instance.playerPieces[i].SetActive(true);
                 }
             }
+        }
+
+        if (currentLives < 0)
+        {
+            GameManager.instance.GameOver();
         }
     }
 
@@ -96,6 +102,7 @@ public class HealthManager : MonoBehaviour
     public void UpdateUI()
     {
         UIManager.instance.healthText.text = "" + currentHealth;
+        UIManager.instance.livesText.text = "x " + currentLives;
 
         switch (currentHealth)
         {
@@ -128,6 +135,17 @@ public class HealthManager : MonoBehaviour
     public void PlayerKilled()
     {
         currentHealth = 0;
+
+        if (currentLives >= 0)
+        {
+            currentLives--;
+        }
+
+        else
+        {
+            currentLives = 0;
+        }
+
         UpdateUI();
     }
 }

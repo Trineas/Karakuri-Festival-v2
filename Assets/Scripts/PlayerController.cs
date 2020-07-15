@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
 
             moveSpeed = 3.5f;
             jumpForce = 12.5f;
-            throwingSpeed = 5;
+            throwingSpeed = 3.5f;
             throwingHeight = 5f;
             charController.center = new Vector3(0f, 0.56f, 0f);
             charController.radius = 0.29f;
@@ -221,7 +221,7 @@ public class PlayerController : MonoBehaviour
 
             moveSpeed = 6.5f;
             jumpForce = 15f;
-            throwingSpeed = 50;
+            throwingSpeed = 35f;
             throwingHeight = 0f;
             charController.center = new Vector3(0f, 0.56f, 0f);
             charController.radius = 0.29f;
@@ -444,7 +444,7 @@ public class PlayerController : MonoBehaviour
             rangedWeaponInstance.transform.rotation = Quaternion.LookRotation(-rangedWeaponSlot.forward);
             Rigidbody rangedWeaponRig = rangedWeaponInstance.GetComponent<Rigidbody>();
 
-            rangedWeaponRig.AddForce(rangedWeaponSlot.forward * moveSpeed, ForceMode.Impulse);
+            rangedWeaponRig.AddForce(rangedWeaponSlot.forward * throwingSpeed, ForceMode.Impulse);
             rangedWeaponRig.AddForce(rangedWeaponSlot.up * throwingHeight, ForceMode.Impulse);
         }
 
@@ -454,7 +454,7 @@ public class PlayerController : MonoBehaviour
             rangedWeaponInstance.transform.rotation = Quaternion.LookRotation(-rangedWeaponSlot.forward);
             Rigidbody rangedWeaponRig = rangedWeaponInstance.GetComponent<Rigidbody>();
 
-            rangedWeaponRig.AddForce(rangedWeaponSlot.forward * moveSpeed, ForceMode.Impulse);
+            rangedWeaponRig.AddForce(rangedWeaponSlot.forward * throwingSpeed, ForceMode.Impulse);
             rangedWeaponRig.AddForce(rangedWeaponSlot.up * throwingHeight, ForceMode.Impulse);
         }
 

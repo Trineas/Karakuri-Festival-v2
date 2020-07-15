@@ -77,10 +77,18 @@ public class GameManager : MonoBehaviour
         HealthManager.instance.PlayerKilled();
     }
 
+    public void GameOver()
+    {
+        StartCoroutine(GameOverCo());
+
+        HealthManager.instance.PlayerKilled();
+    }
+
     public IEnumerator RespawnCo()
     {
         PlayerController.instance.gameObject.SetActive(false);
         CameraController.instance.cmBrain.enabled = false;
+
         UIManager.instance.fadeToBlack = true;
         Instantiate(deathEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
 
@@ -93,6 +101,17 @@ public class GameManager : MonoBehaviour
         PlayerController.instance.transform.position = respawnPosition;
         CameraController.instance.cmBrain.enabled = true;
         PlayerController.instance.gameObject.SetActive(true);
+    }
+
+    public IEnumerator GameOverCo()
+    {
+        UIManager.instance.fadeToBlack = true;
+        Instantiate(deathEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
+
+        yield return new WaitForSeconds(2f);
+
+        HealthManager.instance.currentLives = 3;
+        SceneManager.LoadScene("04_Castle");
     }
 
     public void SetSpawnPoint(Vector3 newSpawnPoint)

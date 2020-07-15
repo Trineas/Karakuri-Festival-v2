@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public Text healthText;
     public Image healthImage;
 
+    public Text livesText;
+
     public Text coinText;
 
     public Text keyText;
