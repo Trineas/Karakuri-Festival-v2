@@ -125,6 +125,12 @@ public class GameManager : MonoBehaviour
         UIManager.instance.coinText.text = "" + currentCoins;
     }
 
+    public void SubtractCoins()
+    {
+        currentCoins--;
+        UIManager.instance.coinText.text = "" + currentCoins;
+    }
+
     public void AddKeys()
     {
         currentKeys++;
