@@ -11,6 +11,7 @@ public class HurtEnemy : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyHealthManager>().TakeDamage();
+
             AudioManager.instance.PlaySFX(soundToPlay);
         }
     }

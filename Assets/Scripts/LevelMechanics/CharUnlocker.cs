@@ -5,7 +5,6 @@ using UnityEngine;
 public class CharUnlocker : MonoBehaviour
 {
     public static CharUnlocker instance;
-    public GameObject musicTrigger;
     public GameObject unlockText;
     public GameObject oldDoor, newDoor;
 
@@ -22,7 +21,6 @@ public class CharUnlocker : MonoBehaviour
     {
         AudioManager.instance.PlaySFX(soundToPlay);
         CharacterSwitch.instance.isCharacter3Unlocked = true;
-        musicTrigger.SetActive(false);
         unlockText.SetActive(true);
         oldDoor.SetActive(false);
         newDoor.SetActive(true);

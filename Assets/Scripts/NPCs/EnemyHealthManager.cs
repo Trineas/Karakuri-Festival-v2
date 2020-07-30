@@ -5,10 +5,16 @@ using UnityEngine;
 public class EnemyHealthManager : MonoBehaviour
 {
     public int maxHealth;
-    private int currentHealth;
+    public int currentHealth;
 
     public float invincibleLength = 1f;
     private float invincCounter;
+
+    public bool isTakingDamage;
+
+    public bool miniboss;
+    public GameObject charUnlocker;
+    public int unlockMusic;
 
     public int deathSound;
 
@@ -41,6 +47,7 @@ public class EnemyHealthManager : MonoBehaviour
                 if (invincCounter <= 0)
                 {
                     enemyPieces[i].SetActive(true);
+                    isTakingDamage = false;
                 }
             }
         }
@@ -50,22 +57,21 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if (invincCounter <= 0)
         {
+            isTakingDamage = true;
+
             if (CharacterSwitch.instance.currentCharacter == 1)
             {
-                currentHealth--;
-                currentHealth--;
+                currentHealth -= 2;
             }
 
             else if (CharacterSwitch.instance.currentCharacter == 2)
             {
-                currentHealth--;
-                currentHealth--;
-                currentHealth--;
+                currentHealth -= 3;
             }
 
             else if (CharacterSwitch.instance.currentCharacter == 3)
             {
-                currentHealth--;
+                currentHealth -= 1;
             }
 
             if (currentHealth <= 0)
@@ -76,10 +82,19 @@ public class EnemyHealthManager : MonoBehaviour
 
                 Destroy(gameObject);
 
-                //PlayerController.instance.Bounce();
+                if (miniboss)
+                {
+                    AudioManager.instance.PlayMusic(unlockMusic);
+                    charUnlocker.transform.position = this.transform.position;
+                    charUnlocker.transform.rotation = this.transform.rotation;
+                    charUnlocker.SetActive(true);
 
-                Instantiate(deathEffect, transform.position + new Vector3(0f, 1.2f, 0f), transform.rotation);
-                Instantiate(itemToDrop, transform.position + new Vector3(0f, 0.5f, 0f), transform.rotation);
+                }
+                else
+                {
+                    Instantiate(deathEffect, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
+                    Instantiate(itemToDrop, transform.position + new Vector3(0f, 0.5f, 0f), transform.rotation);
+                }
             }
 
             else

@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
         PlayerController.instance.transform.position = respawnPosition;
         CameraController.instance.cmBrain.enabled = true;
         PlayerController.instance.gameObject.SetActive(true);
+        PlayerController.instance.stopMove = false;
     }
 
     public IEnumerator GameOverCo()
