@@ -101,12 +101,6 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(controlsClosedButton);
     }
 
-    /*public void LevelSelect()
-    {
-        SceneManager.LoadScene(levelSelect);
-        Time.timeScale = 1f;
-    }*/
-
     public void MainMenu()
     {
         SceneManager.LoadScene(mainMenu);

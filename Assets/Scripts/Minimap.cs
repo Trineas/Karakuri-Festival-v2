@@ -6,7 +6,19 @@ public class Minimap : MonoBehaviour
 {
     public Transform player;
     public Vector3 offset;
-    public GameObject mapCamera;
+    public GameObject mapCamera, mapStuff;
+
+    void Update()
+    {
+        if (UIManager.instance.mapScreen.activeInHierarchy)
+        {
+            mapStuff.SetActive(true);
+        }
+        else
+        {
+            mapStuff.SetActive(false);
+        }
+    }
 
     void LateUpdate()
     {

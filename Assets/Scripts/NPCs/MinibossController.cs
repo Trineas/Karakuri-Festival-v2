@@ -52,7 +52,7 @@ public class MinibossController : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
 
-        if (distanceToPlayer <= 10f)
+        if (currentState == AIState.isAttacking || currentState == AIState.isTeleporting || currentState == AIState.isWaiting)
         {
             oldDoor.SetActive(false);
             newDoor.SetActive(true);

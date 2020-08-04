@@ -64,6 +64,7 @@ public class CharacterSwitch : MonoBehaviour
                 AudioManager.instance.PlaySFX(soundToPlay2);
 
                 PlayerController.instance.stopMove = true;
+                PlayerController.instance.isInteracting = true;
 
                 Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
@@ -85,6 +86,7 @@ public class CharacterSwitch : MonoBehaviour
                 AudioManager.instance.PlaySFX(soundToPlay3);
 
                 PlayerController.instance.stopMove = true;
+                PlayerController.instance.isInteracting = true;
 
                 Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
@@ -103,6 +105,7 @@ public class CharacterSwitch : MonoBehaviour
                 AudioManager.instance.PlaySFX(soundToPlay1);
 
                 PlayerController.instance.stopMove = true;
+                PlayerController.instance.isInteracting = true;
 
                 Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
@@ -125,6 +128,7 @@ public class CharacterSwitch : MonoBehaviour
                 AudioManager.instance.PlaySFX(soundToPlay1);
 
                 PlayerController.instance.stopMove = true;
+                PlayerController.instance.isInteracting = true;
 
                 Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
@@ -149,6 +153,7 @@ public class CharacterSwitch : MonoBehaviour
                 AudioManager.instance.PlaySFX(soundToPlay3);
 
                 PlayerController.instance.stopMove = true;
+                PlayerController.instance.isInteracting = true;
 
                 Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
@@ -167,6 +172,7 @@ public class CharacterSwitch : MonoBehaviour
                 AudioManager.instance.PlaySFX(soundToPlay2);
 
                 PlayerController.instance.stopMove = true;
+                PlayerController.instance.isInteracting = true;
 
                 Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
@@ -186,6 +192,7 @@ public class CharacterSwitch : MonoBehaviour
             AudioManager.instance.PlaySFX(soundToPlay1);
 
             PlayerController.instance.stopMove = true;
+            PlayerController.instance.isInteracting = true;
 
             Instantiate(charSwitchEffect, transform.position, transform.rotation);
 
@@ -206,6 +213,7 @@ public class CharacterSwitch : MonoBehaviour
                 AudioManager.instance.PlaySFX(soundToPlay2);
 
                 PlayerController.instance.stopMove = true;
+                PlayerController.instance.isInteracting = true;
 
                 Instantiate(charSwitchEffect, transform.position, transform.rotation);
 

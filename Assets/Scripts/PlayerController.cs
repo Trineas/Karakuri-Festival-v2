@@ -344,7 +344,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetButtonDown("Ranged Attack"))
             {
-                if (attackCounter < attackLimit && GameManager.instance.currentCoins > 0)
+                if (attackCounter < attackLimit && GameManager.currentCoins > 0)
                 {
                     GameManager.instance.SubtractCoins();
 

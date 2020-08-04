@@ -860,6 +860,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Systems Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 9157540737483663489, guid: 8325cd2cd3cadff43a44fa4f178dd5a0,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8325cd2cd3cadff43a44fa4f178dd5a0, type: 3}
 --- !u!1 &886044273
@@ -978,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b9d3af0d52fcc46b801bec43f7e28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: 04_Castle
+  firstLevel: 01_VillagePrologue
   levelSelect: 04_Castle
   continueButton: {fileID: 311591199}
   levelNames:

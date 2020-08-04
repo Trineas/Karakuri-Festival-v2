@@ -13,21 +13,15 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("Continue"))
+        /*if (PlayerPrefs.HasKey("Continue"))
         {
             continueButton.SetActive(true);
-        }
+        }*/
 
-        else
-        {
+        //else
+        //{
             ResetProgress();
-        }
-    }
-
-
-    void Update()
-    {
-        
+        //}
     }
 
     public void NewGame()

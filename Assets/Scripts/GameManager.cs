@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject deathEffect;
 
-    public int currentCoins, currentKeys;
+    public static int currentCoins;
+    public int currentKeys;
 
     public int LevelEndMusic = 8;
 
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
 
         respawnPosition = PlayerController.instance.transform.position;
 
-        AddCoins(0);
+        UIManager.instance.coinText.text = "" + currentCoins;
         currentKeys = 0;
 
         Scene currentScene = SceneManager.GetActiveScene();
