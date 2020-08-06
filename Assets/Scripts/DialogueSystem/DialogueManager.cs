@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public enum Speaker { Taku, Baku, Satsu, Damasuko, Samurai, Guard, Girl, Boy, Shopkeeper, Blacksmith, Man, Woman }
+    public enum Speaker { Taku, Baku, Satsu, Damasuko, Samurai, Guard, Girl, Boy, Shopkeeper, Merchant, Blacksmith, Woodcutter, Man, Woman }
 
     [System.Serializable]
     public struct SpeechGroup

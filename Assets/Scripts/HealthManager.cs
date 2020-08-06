@@ -6,8 +6,9 @@ public class HealthManager : MonoBehaviour
 {
     public static HealthManager instance;
 
-    public int currentHealth, maxHealth;
-    public int currentLives;
+    public static int currentHealth;
+    public int maxHealth;
+    public static int currentLives = 3;
 
     public float invincibleLength = 2f;
     private float invincCounter;

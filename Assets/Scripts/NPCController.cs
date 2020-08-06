@@ -10,6 +10,8 @@ public class NPCController : MonoBehaviour
 
     public NavMeshAgent agent;
 
+    public bool canPatrol;
+
     public Animator anim;
 
     public enum AIState
@@ -44,7 +46,7 @@ public class NPCController : MonoBehaviour
                     waitCounter -= Time.deltaTime;
                 }
 
-                else
+                else if (canPatrol && waitCounter <= 0)
                 {
                     currentState = AIState.isPatroling;
                     agent.SetDestination(patrolPoints[currentPatrolPoint].position);
@@ -97,10 +99,16 @@ public class NPCController : MonoBehaviour
                         waitCounter -= Time.deltaTime;
                     }
 
-                    else
+                    else if (canPatrol && waitCounter <= 0)
                     {
                         agent.isStopped = false;
                         currentState = AIState.isPatroling;
+                    }
+
+                    else
+                    {
+                        agent.isStopped = true;
+                        currentState = AIState.isIdle;
                     }
                 }
 

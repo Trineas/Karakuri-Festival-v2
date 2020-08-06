@@ -1970,6 +1970,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b0fc63c25538d93488ea3de90f917bda, type: 3}
   - {fileID: 21300000, guid: b0fc63c25538d93488ea3de90f917bda, type: 3}
   - {fileID: 21300000, guid: b0fc63c25538d93488ea3de90f917bda, type: 3}
+  - {fileID: 21300000, guid: b0fc63c25538d93488ea3de90f917bda, type: 3}
+  - {fileID: 21300000, guid: b0fc63c25538d93488ea3de90f917bda, type: 3}
   TextBoxCanvasGroup: {fileID: 4324125087733076237}
   speakerPortrait: {fileID: 882789479140441691}
   speakerName: {fileID: 7112894748363056662}

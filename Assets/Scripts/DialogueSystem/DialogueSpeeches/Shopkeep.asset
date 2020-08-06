@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f365ca7853731438aa11f3d15532a8, type: 3}
+  m_Name: Shopkeep
+  m_EditorClassIdentifier: 
+  speechNum: 9
+  speechName: Shopkeep
+  speechGroup:
+  - currentSpeaker: 0
+    speechText: Good morning, boss!
+  - currentSpeaker: 8
+    speechText: Mornin' kid. Got a delivery for ya'.
+  - currentSpeaker: 0
+    speechText: Breakfast for Doctor Damasuko?
+  - currentSpeaker: 8
+    speechText: Yup. The usual. You know where to find her right?
+  - currentSpeaker: 0
+    speechText: Yes! Just down the East Road to the Bamboo Forest!
+  - currentSpeaker: 8
+    speechText: You go ahead then. And don't dally.
+  - currentSpeaker: 0
+    speechText: I won't! Later, boss!

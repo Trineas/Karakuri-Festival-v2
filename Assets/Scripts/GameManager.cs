@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         respawnPosition = PlayerController.instance.transform.position;
 
         UIManager.instance.coinText.text = "" + currentCoins;
+        UIManager.instance.healthText.text = "" + HealthManager.currentHealth;
+        UIManager.instance.livesText.text = "x " + HealthManager.currentLives;
         currentKeys = 0;
 
         Scene currentScene = SceneManager.GetActiveScene();
@@ -112,7 +114,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        HealthManager.instance.currentLives = 3;
+        HealthManager.currentLives = 5;
         SceneManager.LoadScene("04_Castle");
     }
 

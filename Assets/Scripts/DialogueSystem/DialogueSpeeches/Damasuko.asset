@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f365ca7853731438aa11f3d15532a8, type: 3}
+  m_Name: Damasuko
+  m_EditorClassIdentifier: 
+  speechNum: 8
+  speechName: Damasuko
+  speechGroup:
+  - currentSpeaker: 3
+    speechText: Hey, Noodle-boy.
+  - currentSpeaker: 0
+    speechText: Good morning, Doc!
+  - currentSpeaker: 1
+    speechText: Morning, Taku.
+  - currentSpeaker: 0
+    speechText: Good morning, Baku!
+  - currentSpeaker: 3
+    speechText: Just put my food over there, I'm in the middle of something...
+  - currentSpeaker: 1
+    speechText: I finished adjusting the Blackpowder levels, so I'm gonna leave now.
+  - currentSpeaker: 3
+    speechText: Good work, good work! ....Wait, what's that noise outside?
+  - currentSpeaker: 0
+    speechText: Huh?
+  - currentSpeaker: 1
+    speechText: Huh?
+  - currentSpeaker: 3
+    speechText: '*Insert fancy Cutscene here where Aliens attack the village*'
+  - currentSpeaker: 3
+    speechText: What a mess! You two! Go find out what's going on at the Castle,
+      while I figure out how to stop them!
+  - currentSpeaker: 0
+    speechText: Oh boy! Adventure!
+  - currentSpeaker: 1
+    speechText: I guess someone has to take care of Taku, so he won't jump headfirst
+      into trouble...
+  - currentSpeaker: 3
+    speechText: If they attack you, make sure to defend yourself. (Mouse 1 / X)
+  - currentSpeaker: 3
+    speechText: I guess you could also throw your deliveries, but that's gonna cost
+      you some Coins. (Mouse 2 / Y)
+  - currentSpeaker: 1
+    speechText: 'If you need me, just let me know.
+
+      (R1 / Q) (L1 / E)'

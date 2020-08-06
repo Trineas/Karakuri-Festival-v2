@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "New Speech", menuName = "Dialogue/Speech")]
 public class SpeechScript : ScriptableObject
 {
-    public int speechNum;
+    //public int speechNum;
 
-    public string speechName;
+    //public string speechName;
 
     public List<DialogueManager.SpeechGroup> speechGroup;
 }

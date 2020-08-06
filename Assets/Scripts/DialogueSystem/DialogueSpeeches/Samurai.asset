@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f365ca7853731438aa11f3d15532a8, type: 3}
+  m_Name: Samurai
+  m_EditorClassIdentifier: 
+  speechNum: 1
+  speechName: Samurai
+  speechGroup:
+  - currentSpeaker: 4
+    speechText: Top of the morning, child.
+  - currentSpeaker: 0
+    speechText: Good morning! What a beautiful day, don't you think?!
+  - currentSpeaker: 4
+    speechText: Humm... Quite so. Off to a delivery I reckon?
+  - currentSpeaker: 0
+    speechText: Yeah! Checking up on the Doc so she won't faint from not eating again.
+  - currentSpeaker: 4
+    speechText: Off you go then.
