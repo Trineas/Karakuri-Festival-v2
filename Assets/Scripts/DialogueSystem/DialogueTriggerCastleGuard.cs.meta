@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 792f7bdd58ed64d4f9c690f4cee8332d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - castleGuardSpeech: {fileID: 11400000, guid: 7576eaf3be26b5a4d93db7029e33b8b2,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

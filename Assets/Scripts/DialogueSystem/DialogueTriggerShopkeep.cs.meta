@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2038317ede8b7ae4c81795dbf7262d7d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shopKeepSpeech: {fileID: 11400000, guid: 537c6d1fecfdc624c8fe327dcf76cf02, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: f21d7a28298a11d409a44501a04b2bb4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - damasukoSpeech: {fileID: 11400000, guid: 938eb06543bb8f94fb9da60b3c89f14e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

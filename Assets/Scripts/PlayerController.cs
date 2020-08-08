@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] playerPieces;
 
     public bool stopMove;
-    public bool canTalkTo;
+    public bool canTalkTo, canTalkToShopkeep, canTalkToSamurai, canTalkToBlacksmith, canTalkToMan, canTalkToWoodcutter, canTalkToSign, canTalkToMerchant, canTalkToCastleGuard, canTalkToVillageGuard, canTalkToDamasuko;
     public bool canInteractWith, canInteractWithUp, canInteractWithDown;
     public bool attackingUnlocked = true;
 
@@ -261,7 +261,56 @@ public class PlayerController : MonoBehaviour
             {
                 stopMove = true;
                 isInteracting = true;
-                DialogueTrigger.instance.TriggerDialogue();
+
+                if (canTalkToShopkeep)
+                {
+                    DialogueTriggerShopkeep.instance.TriggerDialogue();
+                }
+
+                if (canTalkToSamurai)
+                {
+                    DialogueTriggerSamurai.instance.TriggerDialogue();
+                }
+
+                if (canTalkToBlacksmith)
+                {
+                    DialogueTriggerBlacksmith.instance.TriggerDialogue();
+                }
+
+                if (canTalkToMan)
+                {
+                    DialogueTriggerMan.instance.TriggerDialogue();
+                }
+
+                if (canTalkToWoodcutter)
+                {
+                    DialogueTriggerWoodcutter.instance.TriggerDialogue();
+                }
+
+                if (canTalkToMerchant)
+                {
+                    DialogueTriggerMerchant.instance.TriggerDialogue();
+                }
+
+                if (canTalkToCastleGuard)
+                {
+                    DialogueTriggerCastleGuard.instance.TriggerDialogue();
+                }
+
+                if (canTalkToVillageGuard)
+                {
+                    DialogueTriggerVillageGuard.instance.TriggerDialogue();
+                }
+
+                if (canTalkToDamasuko)
+                {
+                    DialogueTriggerDamasuko.instance.TriggerDialogue();
+                }
+
+                if (canTalkToSign)
+                {
+                    DialogueTriggerSign.instance.TriggerDialogue();
+                }
             }
         }
 

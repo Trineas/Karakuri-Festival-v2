@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f365ca7853731438aa11f3d15532a8, type: 3}
   m_Name: DamasukoAfter
   m_EditorClassIdentifier: 
-  speechNum: 10
-  speechName: Damasuko
   speechGroup:
   - currentSpeaker: 3
-    speechText: What are ya'll still doing here? Investigate the Castle!
+    speechText: What are you still doing here? Investigate the Castle!
   - currentSpeaker: 1
-    speechText: Just let me know when you need me, Taku. ((R1 / Q) (L1 / E)
+    speechText: Just let me know when you need me, Taku. (R1 / Q) (L1 / E)
   - currentSpeaker: 3
-    speechText: Make sure you defend yourself if you are attacked. (Mouse 1 / X)
-      (Mouse 2/ Y)
+    speechText: Make sure you defend yourself if you are attacked. (X / Mouse 1)
+  - currentSpeaker: 3
+    speechText: I guess you could also throw your deliveries, but that's gonna cost
+      you some Coins. (Y / Mouse 2)

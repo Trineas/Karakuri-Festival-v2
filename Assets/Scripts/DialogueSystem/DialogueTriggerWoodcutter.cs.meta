@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 3d8f55e5de10cb54b9fed4a9d9ccd527
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - woodcutterSpeech: {fileID: 11400000, guid: 8360d90c7e6fb804e8920cf3f9bfd2d8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -696,7 +696,7 @@ PrefabInstance:
         type: 3}
       propertyPath: artworks.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: b0fc63c25538d93488ea3de90f917bda,
+      objectReference: {fileID: 21300000, guid: 3e41a1a8e037ebf43b26cbbb68a50b0b,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea0a0676c06354444b6670d703d9171c, type: 3}

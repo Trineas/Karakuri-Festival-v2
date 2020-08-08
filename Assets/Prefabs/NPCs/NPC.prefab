@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2863782345468379211}
   - component: {fileID: 5363161265639855823}
   - component: {fileID: 3161212514666984908}
-  - component: {fileID: 4072700145142775927}
+  - component: {fileID: 3119970130297887366}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -75,6 +75,7 @@ MonoBehaviour:
   - {fileID: 0}
   currentPatrolPoint: 0
   agent: {fileID: 4736787875437437439}
+  canPatrol: 0
   anim: {fileID: 5564461917429775127}
   currentState: 0
   faceRange: 2
@@ -104,7 +105,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 3}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &4072700145142775927
+--- !u!114 &3119970130297887366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,9 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2038317ede8b7ae4c81795dbf7262d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTalkTo: 0
-  speechToPlay: {fileID: 11400000, guid: d2d155f2cd8fa184db6aedbcdc86acff, type: 2}
-  eventSoundToPlay: 1
+  shopKeepSpeech: {fileID: 11400000, guid: 537c6d1fecfdc624c8fe327dcf76cf02, type: 2}
 --- !u!1001 &5564461917420375671
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3727,6 +3727,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.400946, y: 5.7, z: 4.93}
   m_Center: {x: 0, y: 2.85, z: 0}
+--- !u!1001 &513426922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1465562098664623064, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: signSpeech
+      value: 
+      objectReference: {fileID: 11400000, guid: 2abe8c916924c16498e8e85513fb33c8,
+        type: 2}
+    - target: {fileID: 1956309744831390186, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_Name
+      value: Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.48903596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 83.59071
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071079
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956309744831390189, guid: 49209451c12602749aba1885873e1fa4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49209451c12602749aba1885873e1fa4, type: 3}
 --- !u!1 &525708624
 GameObject:
   m_ObjectHideFlags: 0
@@ -15643,12 +15718,12 @@ PrefabInstance:
     - target: {fileID: 7117034205736211100, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.04759039
+      value: 0.047590356
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205736211100, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.14116907
+      value: -0.14116909
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205736211100, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
@@ -15678,12 +15753,12 @@ PrefabInstance:
     - target: {fileID: 7117034205784325998, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.33340663
+      value: 0.3334067
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205784325998, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.04651105
+      value: 0.046511013
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205784325998, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
@@ -15693,7 +15768,7 @@ PrefabInstance:
     - target: {fileID: 7117034205784325998, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9326043
+      value: 0.9326042
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205784325998, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
@@ -15713,17 +15788,17 @@ PrefabInstance:
     - target: {fileID: 7117034205895294542, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000003330008
+      value: -0.000000037172583
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205895294542, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000021903184
+      value: 0.000000002445033
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205895294542, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06563335
+      value: 0.06563336
       objectReference: {fileID: 0}
     - target: {fileID: 7117034205895294542, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
@@ -15778,12 +15853,12 @@ PrefabInstance:
     - target: {fileID: 7117034207023423642, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.048286807
+      value: 0.04828686
       objectReference: {fileID: 0}
     - target: {fileID: 7117034207023423642, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.15230885
+      value: -0.15230884
       objectReference: {fileID: 0}
     - target: {fileID: 7117034207023423642, guid: d10a72d5aa550aa4f998dd7ebb8ced84,
         type: 3}

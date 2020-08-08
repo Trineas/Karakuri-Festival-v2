@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 3a6f3075e94a2b24bb32ab89e84416d0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - blacksmithSpeech: {fileID: 11400000, guid: 0af8b8fad75de46418ec1b4416dc1446, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f365ca7853731438aa11f3d15532a8, type: 3}
   m_Name: Damasuko
   m_EditorClassIdentifier: 
-  speechNum: 8
-  speechName: Damasuko
   speechGroup:
   - currentSpeaker: 3
     speechText: Hey, Noodle-boy.
@@ -44,10 +42,10 @@ MonoBehaviour:
     speechText: I guess someone has to take care of Taku, so he won't jump headfirst
       into trouble...
   - currentSpeaker: 3
-    speechText: If they attack you, make sure to defend yourself. (Mouse 1 / X)
+    speechText: If they attack you, make sure to defend yourself. (X / Mouse 1)
   - currentSpeaker: 3
     speechText: I guess you could also throw your deliveries, but that's gonna cost
-      you some Coins. (Mouse 2 / Y)
+      you some Coins. (Y / Mouse 2)
   - currentSpeaker: 1
     speechText: 'If you need me, just let me know.
 

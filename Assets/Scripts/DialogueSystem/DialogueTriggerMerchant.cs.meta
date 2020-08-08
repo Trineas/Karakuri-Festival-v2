@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 3311455afbf4d5f47a3e413eb622c622
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - merchantSpeech: {fileID: 11400000, guid: 874dfe2468e4a1f44b6ad4e3f62f6c7a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

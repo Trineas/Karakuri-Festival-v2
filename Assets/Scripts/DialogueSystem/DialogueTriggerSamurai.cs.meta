@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 0412fa2dab2662e4bac54fe0dae24e3e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - samuraiSpeech: {fileID: 11400000, guid: d2d155f2cd8fa184db6aedbcdc86acff, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
