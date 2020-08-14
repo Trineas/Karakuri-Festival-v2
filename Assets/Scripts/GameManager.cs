@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
         CameraController.instance.cmBrain.enabled = true;
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.stopMove = false;
+        PlayerController.instance.isInteracting = false;
     }
 
     public IEnumerator GameOverCo()
